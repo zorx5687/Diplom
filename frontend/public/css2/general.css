@@ -1,0 +1,541 @@
+:root {
+    font-family: 'ALS Hauss', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'ALS Hauss', serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    color: #000;
+}
+
+.b-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 0;
+    z-index: 1000;
+}
+
+.b-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, .9);
+    z-index: -1;
+}
+
+.container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.b-header-container {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    z-index: 1;
+    flex-direction: row;
+}
+
+.b-header-nav {
+    width: 40%;
+}
+
+.b-header-logo {
+    flex-shrink: 0;
+    width: 300px;
+    height: 5rem;
+    background-image: url('data:image/svg+xml,<svg width="372.725px" height="97.6px" xmlns="http://www.w3.org/2000/svg" viewBox="-86.36250000000001 6.200000000000003 672.725 137.6" style="background: rgba(0, 0, 0, 0);" preserveAspectRatio="xMidYMid"><defs><filter id="editing-hole" x="-100%" y="-100%" width="300%" height="300%"><feFlood flood-color="%23000000" result="black"></feFlood><feMorphology operator="dilate" radius="2" in="SourceGraphic" result="erode"></feMorphology><feGaussianBlur in="erode" stdDeviation="4" result="blur"></feGaussianBlur><feOffset in="blur" dx="2" dy="2" result="offset"></feOffset><feComposite operator="atop" in="offset" in2="black" result="merge"></feComposite><feComposite operator="in" in="merge" in2="SourceGraphic" result="inner-shadow"></feComposite></filter></defs><g filter="url(%23editing-hole)"><g transform="translate(9.874987721443176, 106.5)"><path d="M40.19-10.33L42.97-10.33L42.97 0L23.06 0L23.06-10.33L25.70-10.33L25.70-20.66L25.70-20.66Q25.70-22.74 24.82-23.72L24.82-23.72L24.82-23.72Q23.94-24.70 22.18-24.70L22.18-24.70L22.18-24.70Q18.40-24.70 18.40-20.66L18.40-20.66L18.40-10.33L21.04-10.33L21.04 0L1.13 0L1.13-10.33L3.91-10.33L3.91-38.68L1.13-38.68L1.13-49.01L18.40-49.01L18.40-30.11L18.40-30.11Q20.73-33.01 23.44-34.46L23.44-34.46L23.44-34.46Q26.14-35.91 29.74-35.91L29.74-35.91L29.74-35.91Q34.97-35.91 37.58-32.63L37.58-32.63L37.58-32.63Q40.19-29.36 40.19-23.63L40.19-23.63L40.19-10.33ZM78.94-10.33L81.71-10.33L81.71 0L65.08 0L65.08-4.28L65.08-4.28Q63.69-2.27 61.20-0.69L61.20-0.69L61.20-0.69Q58.72 0.88 55.13 0.88L55.13 0.88L55.13 0.88Q50.40 0.88 47.69-1.64L47.69-1.64L47.69-1.64Q44.98-4.16 44.98-8.76L44.98-8.76L44.98-8.76Q44.98-20.66 65.20-20.98L65.20-20.98L65.20-20.98Q65.02-23.12 63.57-23.91L63.57-23.91L63.57-23.91Q62.12-24.70 58.65-24.70L58.65-24.70L58.65-24.70Q55.82-24.70 52.57-24.10L52.57-24.10L52.57-24.10Q49.33-23.50 46.62-22.49L46.62-22.49L46.62-34.08L46.62-34.08Q49.96-34.90 53.86-35.41L53.86-35.41L53.86-35.41Q57.77-35.91 61.49-35.91L61.49-35.91L61.49-35.91Q70.88-35.91 74.91-32.51L74.91-32.51L74.91-32.51Q78.94-29.11 78.94-21.99L78.94-21.99L78.94-10.33ZM65.08-14.36L65.08-14.74L65.08-14.74Q62.24-14.74 60.70-13.99L60.70-13.99L60.70-13.99Q59.16-13.23 59.16-11.47L59.16-11.47L59.16-11.47Q59.16-10.39 59.82-9.73L59.82-9.73L59.82-9.73Q60.48-9.07 61.68-9.07L61.68-9.07L61.68-9.07Q63.31-9.07 64.20-10.46L64.20-10.46L64.20-10.46Q65.08-11.84 65.08-14.36L65.08-14.36ZM122.79-10.33L125.56-10.33L125.56 0L105.65 0L105.65-10.33L108.30-10.33L108.30-20.66L108.30-20.66Q108.30-22.74 107.41-23.72L107.41-23.72L107.41-23.72Q106.53-24.70 104.77-24.70L104.77-24.70L104.77-24.70Q100.99-24.70 100.99-20.66L100.99-20.66L100.99-10.33L103.63-10.33L103.63 0L83.73 0L83.73-10.33L86.50-10.33L86.50-24.70L83.73-24.70L83.73-35.03L100.99-35.03L100.99-30.11L100.99-30.11Q105.52-35.91 112.33-35.91L112.33-35.91L112.33-35.91Q117.56-35.91 120.17-32.63L120.17-32.63L120.17-32.63Q122.79-29.36 122.79-23.63L122.79-23.63L122.79-10.33ZM139.99 0.88L139.99 0.88Q133.56 0.88 130.32-3.91L130.32-3.91L130.32-3.91Q127.07-8.69 127.07-17.51L127.07-17.51L127.07-17.51Q127.07-26.33 130.32-31.12L130.32-31.12L130.32-31.12Q133.56-35.91 139.99-35.91L139.99-35.91L139.99-35.91Q143.20-35.91 145.69-34.34L145.69-34.34L145.69-34.34Q148.18-32.76 149.75-30.74L149.75-30.74L149.75-38.68L146.03-38.68L146.03-49.01L164.24-49.01L164.24-10.33L167.01-10.33L167.01 0L149.75 0L149.75-4.28L149.75-4.28Q148.18-2.27 145.69-0.69L145.69-0.69L145.69-0.69Q143.20 0.88 139.99 0.88L139.99 0.88ZM146.10-10.33L146.10-10.33Q147.92-10.33 148.84-11.31L148.84-11.31L148.84-11.31Q149.75-12.29 149.75-14.36L149.75-14.36L149.75-20.66L149.75-20.66Q149.75-22.74 148.84-23.72L148.84-23.72L148.84-23.72Q147.92-24.70 146.10-24.70L146.10-24.70L146.10-24.70Q144.27-24.70 143.36-23.72L143.36-23.72L143.36-23.72Q142.44-22.74 142.44-20.66L142.44-20.66L142.44-14.36L142.44-14.36Q142.44-12.29 143.36-11.31L143.36-11.31L143.36-11.31Q144.27-10.33 146.10-10.33L146.10-10.33ZM206.70 0.88L206.70 0.88Q197.76 0.88 192.72-3.81L192.72-3.81L192.72-3.81Q187.68-8.51 187.68-17.51L187.68-17.51L187.68-17.51Q187.68-26.52 192.72-31.22L192.72-31.22L192.72-31.22Q197.76-35.91 206.70-35.91L206.70-35.91L206.70-35.91Q215.59-35.91 219.52-31.28L219.52-31.28L219.52-31.28Q223.46-26.65 223.46-19.78L223.46-19.78L223.46-15.25L203.05-15.25L203.05-14.87L203.05-14.87Q203.05-12.54 204.44-11.43L204.44-11.43L204.44-11.43Q205.82-10.33 209.03-10.33L209.03-10.33L209.03-10.33Q212.88-10.33 216.34-10.90L216.34-10.90L216.34-10.90Q219.81-11.47 222.39-12.35L222.39-12.35L222.39-2.27L222.39-2.27Q220.19-1.07 215.93-0.09L215.93-0.09L215.93-0.09Q211.68 0.88 206.70 0.88L206.70 0.88ZM203.05-22.18L210.36-22.18L210.36-22.93L210.36-22.93Q210.36-25.07 209.44-26.02L209.44-26.02L209.44-26.02Q208.53-26.96 206.70-26.96L206.70-26.96L206.70-26.96Q204.88-26.96 203.96-25.99L203.96-25.99L203.96-25.99Q203.05-25.01 203.05-22.93L203.05-22.93L203.05-22.18ZM245.38 0.06L225.35 0.06L225.35-10.33L228.12-10.33L228.12-38.68L225.35-38.68L225.35-49.01L242.61-49.01L242.61-10.33L245.38-10.33L245.38 0.06ZM266.18 0.88L266.18 0.88Q257.23 0.88 252.19-3.81L252.19-3.81L252.19-3.81Q247.15-8.51 247.15-17.51L247.15-17.51L247.15-17.51Q247.15-26.52 252.19-31.22L252.19-31.22L252.19-31.22Q257.23-35.91 266.18-35.91L266.18-35.91L266.18-35.91Q275.06-35.91 279.00-31.28L279.00-31.28L279.00-31.28Q282.93-26.65 282.93-19.78L282.93-19.78L282.93-15.25L262.52-15.25L262.52-14.87L262.52-14.87Q262.52-12.54 263.91-11.43L263.91-11.43L263.91-11.43Q265.29-10.33 268.51-10.33L268.51-10.33L268.51-10.33Q272.35-10.33 275.81-10.90L275.81-10.90L275.81-10.90Q279.28-11.47 281.86-12.35L281.86-12.35L281.86-2.27L281.86-2.27Q279.66-1.07 275.40-0.09L275.40-0.09L275.40-0.09Q271.15 0.88 266.18 0.88L266.18 0.88ZM262.52-22.18L269.83-22.18L269.83-22.93L269.83-22.93Q269.83-25.07 268.92-26.02L268.92-26.02L268.92-26.02Q268.00-26.96 266.18-26.96L266.18-26.96L266.18-26.96Q264.35-26.96 263.43-25.99L263.43-25.99L263.43-25.99Q262.52-25.01 262.52-22.93L262.52-22.93L262.52-22.18ZM284.57 13.99L284.57 3.65L287.34 3.65L287.34-24.70L284.57-24.70L284.57-35.03L301.83-35.03L301.83-30.74L301.83-30.74Q303.41-32.76 305.90-34.34L305.90-34.34L305.90-34.34Q308.38-35.91 311.60-35.91L311.60-35.91L311.60-35.91Q318.02-35.91 321.27-31.12L321.27-31.12L321.27-31.12Q324.51-26.33 324.51-17.51L324.51-17.51L324.51-17.51Q324.51-8.69 321.27-3.91L321.27-3.91L321.27-3.91Q318.02 0.88 311.60 0.88L311.60 0.88L311.60 0.88Q308.38 0.88 305.90-0.69L305.90-0.69L305.90-0.69Q303.41-2.27 301.83-4.28L301.83-4.28L301.83 3.65L306.18 3.65L306.18 13.99L284.57 13.99ZM305.49-10.33L305.49-10.33Q307.31-10.33 308.23-11.31L308.23-11.31L308.23-11.31Q309.14-12.29 309.14-14.36L309.14-14.36L309.14-20.66L309.14-20.66Q309.14-22.74 308.23-23.72L308.23-23.72L308.23-23.72Q307.31-24.70 305.49-24.70L305.49-24.70L305.49-24.70Q303.66-24.70 302.75-23.72L302.75-23.72L302.75-23.72Q301.83-22.74 301.83-20.66L301.83-20.66L301.83-14.36L301.83-14.36Q301.83-12.29 302.75-11.31L302.75-11.31L302.75-11.31Q303.66-10.33 305.49-10.33L305.49-10.33ZM365.34-10.33L368.11-10.33L368.11 0L348.20 0L348.20-10.33L350.85-10.33L350.85-20.66L350.85-20.66Q350.85-22.74 349.96-23.72L349.96-23.72L349.96-23.72Q349.08-24.70 347.32-24.70L347.32-24.70L347.32-24.70Q343.54-24.70 343.54-20.66L343.54-20.66L343.54-10.33L346.18-10.33L346.18 0L326.28 0L326.28-10.33L329.05-10.33L329.05-38.68L326.28-38.68L326.28-49.01L343.54-49.01L343.54-30.11L343.54-30.11Q345.87-33.01 348.58-34.46L348.58-34.46L348.58-34.46Q351.29-35.91 354.88-35.91L354.88-35.91L354.88-35.91Q360.11-35.91 362.72-32.63L362.72-32.63L362.72-32.63Q365.34-29.36 365.34-23.63L365.34-23.63L365.34-10.33ZM404.08-10.33L406.85-10.33L406.85 0L390.22 0L390.22-4.28L390.22-4.28Q388.84-2.27 386.35-0.69L386.35-0.69L386.35-0.69Q383.86 0.88 380.27 0.88L380.27 0.88L380.27 0.88Q375.54 0.88 372.83-1.64L372.83-1.64L372.83-1.64Q370.13-4.16 370.13-8.76L370.13-8.76L370.13-8.76Q370.13-20.66 390.35-20.98L390.35-20.98L390.35-20.98Q390.16-23.12 388.71-23.91L388.71-23.91L388.71-23.91Q387.26-24.70 383.80-24.70L383.80-24.70L383.80-24.70Q380.96-24.70 377.72-24.10L377.72-24.10L377.72-24.10Q374.47-23.50 371.76-22.49L371.76-22.49L371.76-34.08L371.76-34.08Q375.10-34.90 379.01-35.41L379.01-35.41L379.01-35.41Q382.91-35.91 386.63-35.91L386.63-35.91L386.63-35.91Q396.02-35.91 400.05-32.51L400.05-32.51L400.05-32.51Q404.08-29.11 404.08-21.99L404.08-21.99L404.08-10.33ZM390.22-14.36L390.22-14.74L390.22-14.74Q387.39-14.74 385.84-13.99L385.84-13.99L385.84-13.99Q384.30-13.23 384.30-11.47L384.30-11.47L384.30-11.47Q384.30-10.39 384.96-9.73L384.96-9.73L384.96-9.73Q385.62-9.07 386.82-9.07L386.82-9.07L386.82-9.07Q388.46-9.07 389.34-10.46L389.34-10.46L389.34-10.46Q390.22-11.84 390.22-14.36L390.22-14.36ZM447.93-10.33L450.70-10.33L450.70 0L430.79 0L430.79-10.33L433.44-10.33L433.44-20.66L433.44-20.66Q433.44-22.74 432.56-23.72L432.56-23.72L432.56-23.72Q431.68-24.70 429.91-24.70L429.91-24.70L429.91-24.70Q426.13-24.70 426.13-20.66L426.13-20.66L426.13-10.33L428.78-10.33L428.78 0L408.87 0L408.87-10.33L411.64-10.33L411.64-24.70L408.87-24.70L408.87-35.03L426.13-35.03L426.13-30.11L426.13-30.11Q430.67-35.91 437.47-35.91L437.47-35.91L437.47-35.91Q442.70-35.91 445.32-32.63L445.32-32.63L445.32-32.63Q447.93-29.36 447.93-23.63L447.93-23.63L447.93-10.33ZM468.28 0.88L468.28 0.88Q461.60 0.88 458.23-2.36L458.23-2.36L458.23-2.36Q454.86-5.61 454.86-13.29L454.86-13.29L454.86-24.70L452.09-24.70L452.09-35.03L452.09-35.03Q454.48-35.03 455.68-36.26L455.68-36.26L455.68-36.26Q456.88-37.48 456.88-39.63L456.88-39.63L456.88-42.46L470.23-42.46L470.23-35.03L478.74-35.03L478.74-24.70L470.23-24.70L470.23-14.36L470.23-14.36Q470.23-12.29 471.15-11.31L471.15-11.31L471.15-11.31Q472.06-10.33 473.89-10.33L473.89-10.33L473.89-10.33Q476.28-10.33 479.12-10.90L479.12-10.90L479.12-1.01L479.12-1.01Q477.35-0.32 474.36 0.28L474.36 0.28L474.36 0.28Q471.37 0.88 468.28 0.88L468.28 0.88Z" fill="%23000000"></path></g></g><style>text { font-size: 64px; font-family: Arial Black; dominant-baseline: central; text-anchor: middle;}</style></svg>');
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.b-header-nav-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*flex-wrap: wrap;*/
+    /*margin: 0 -10rem;*/
+}
+
+#search-form {
+    overflow: hidden;
+    position: relative;
+    width: 0;
+    opacity: 0;
+    transition: width .3s ease, opacity .3s ease;
+}
+
+#search-form.--open {
+    width: 500px;
+    opacity: 1;
+}
+
+.search-input {
+    width: 100%;
+    border: unset;
+    outline: unset;
+    box-shadow: unset;
+    color: #000;
+    font-family: 'ALS Hauss';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    /*line-height: 140%;*/
+    /*line-height: 130%;*/
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e1e1e1;
+    background-color: transparent;
+    transition: all .3s ease;
+}
+
+.post-editor {
+    cursor: pointer;
+    position: absolute;
+    padding: 0.5rem;
+    margin: 1rem;
+    border: #ed2b63 1px solid;
+    background-color: #ed2b63;
+    border-radius: 48px;
+    z-index: 1;
+}
+
+
+.post-editor:hover {
+    background-color: #e1e1e1;
+}
+
+.search-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    /*padding: 0 0 10rem;*/
+    outline: unset;
+    border: unset;
+    box-shadow: unset;
+    background-color: unset;
+    font-family: 'ALS Hauss';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #ed2b63;
+}
+
+.b-btn {
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'ALS Hauss';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 3rem;
+    text-align: center;
+    letter-spacing: .06em;
+    text-decoration: unset;
+    width: 100%;
+    padding: 0rem 2rem;
+    border: unset;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #ed2b63;
+    transition: all .3s cubic-bezier(0.88, 0, 1, 1.16);
+}
+
+.b-btn:hover {
+    opacity: 0.8;
+}
+
+.send {
+    display: flex;
+    justify-content: center
+}
+
+.send .b-btn {
+    width: 40%;
+}
+
+.b-header-nav-item {
+    margin: 0 0.2rem;
+    width: 100%;
+    align-items: center;
+}
+
+.profile {
+    width: 64px;
+    height: 64px;
+    float: right;
+    padding-right: 1rem;
+}
+
+#btn-login {
+    background-color: black;
+}
+
+.body {
+    padding-left: 11%;
+    padding-right: 11%;
+    display: flex;
+    flex: 1;
+    margin-top: 7rem;
+    margin-bottom: 10rem;
+    justify-content: space-between;
+}
+
+.b-sidebar {
+    padding-right: 10rem;
+}
+
+.b-sidebar-content {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    max-height: calc(100vh - 195rem);
+    min-height: 20rem;
+}
+
+.b-sidebar-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.b-sidebar-block-item {
+    margin-bottom: 2rem;
+    overflow: hidden;
+    display: flex;
+}
+
+.b-sidebar-block-item-name {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    color: #000;
+    text-align: center;
+    padding: 0.5rem 2rem;
+    background-color: #f5f5f5;
+    border-radius: 42rem;
+    transition: all .3s ease;
+}
+
+.b-sidebar-block-item-name:hover {
+    background-color: rgb(245, 245, 245, .7);
+    color: #ed2b63 !important;
+}
+
+.b-content {
+    margin-right: 10rem;
+    width: 60%;
+}
+
+.enter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    width: 100%;
+}
+
+.header {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 4rem;
+}
+
+.search-block {
+    width: 650px;
+    display: flex;
+}
+
+/*.field {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*}*/
+
+.place-holder {
+    margin-bottom: 0.5rem;
+    display: flex;
+}
+
+
+.place-holder input, select, textarea {
+    border: 1px solid #ed2b63;
+    border-radius: 30px;
+    width: 100%;
+    height: 2rem;
+    font-size: 16px;
+    padding-left: 3rem;
+}
+
+.place-holder select, option {
+    background-color: white;
+}
+
+
+select {
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Chrome */
+    -webkit-appearance: none;
+}
+
+/* For IE10 */
+select::-ms-expand {
+    display: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.name {
+    font-size: 24px;
+    margin-bottom: 1rem;
+}
+
+.place-holder textarea {
+    height: 150px;
+    resize: none;
+}
+
+
+.place-holder input:focus, select:focus, textarea:focus {
+    outline: none;
+}
+
+.error {
+    font-size: 24px;
+    color: red;
+    margin-bottom: 0.5rem;
+}
+
+.userHeader {
+    display: flex;
+    flex-direction: row;
+}
+
+.user-pic svg {
+    width: 256px;
+    height: 256px;
+}
+
+.user-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+}
+
+.user-info .user-name {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.user-info .user-mail {
+    font-size: 36px;
+    font-weight: 400;
+    color: #777777;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item-cart {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ed2b63;
+    border-radius: 48px;
+    margin: 10px;
+    padding: 20px;
+    flex: 40%;
+    transition: all .1s cubic-bezier(0.88, 0, 1, 1.16);
+}
+
+.item-cart:hover {
+    background-color: rgba(240, 240, 240, 0.49);
+    box-shadow: 10px 5px 5px gray;
+}
+
+.item-pic:hover ~ .item-text, .item-pic:hover, .item-text:hover {
+    cursor: pointer;
+    color: #ed2b63;
+}
+
+.manage-post {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly
+}
+
+.hidden {
+    display: none;
+}
+
+.item-pic img {
+    float: left;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 48px;
+}
+
+.no-click {
+    cursor: default;
+}
+
+.m-button:hover {
+    fill: #ed2b63;
+}
+
+.item-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-text .item-text-top {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: 550;
+    font-size: 24px;
+    margin: 0 0 1rem 0;
+    /*padding: 0 1rem;*/
+}
+
+.item-description {
+    /*color: ghostwhite;*/
+    /*font-size: 14px;*/
+}
+
+.text-block {
+    margin-top: 1rem;
+}
+
+.item-text-mid {
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+}
+
+.post {
+    perspective: 1000px;
+    position: relative;
+    width: 110%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+
+
+.card {
+    border: 1px solid #ed2b63;
+    padding: 5%;
+    border-radius: 48px;
+    width: 90%;
+    display: flex;
+    backface-visibility: hidden;
+    position: absolute;
+}
+.front {
+    /*background-color: purple;*/
+}
+
+.back {
+    /*background-color: orange;*/
+    transform: rotateY(180deg);
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+.post-img {
+    width: 50%;
+}
+
+.post-img image {
+    width: 100%;
+    height: 100%;
+}
+
+
+.post img {
+    float: left;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 48px;
+}
+
+.post-text {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+}
+
+.post-article {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20%;
+    margin-bottom: 2rem;
+}
+
+.post-article-name {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.post-article-text {
+    font-size: 24px;
+}
+
+.clickable {
+    color: #777777;
+}
+
+.clickable:hover {
+    cursor: pointer;
+    color: #ed2b63;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.dropzone {
+    border-radius: 42rem;
+    background-color: black;
+}
+
+.post-edit {
+
+}

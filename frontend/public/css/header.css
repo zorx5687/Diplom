@@ -1,0 +1,36 @@
+header {
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    background-color: var(--header-background-color);
+    margin: 0;
+}
+
+
+
+header .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;;
+    align-items: center;
+}
+
+
+header .header .navigation {
+    margin: 0.35rem;
+    display: flex;
+    list-style: none;
+}
+
+header .header .navigation li {
+    padding: 0 2rem;
+    border: 1px solid white;
+    background-color: white;
+    margin: 1px;
+}
+
+header .header .authorization {
+    display: flex;
+    width: 15%;
+    justify-content: space-evenly
+}

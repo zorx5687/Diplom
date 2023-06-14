@@ -1,0 +1,40 @@
+main {
+    border: 2px solid springgreen;
+    padding: 2rem;
+    margin: 0px 8px;
+}
+
+.blocking {
+    display: block;
+}
+
+.index .product-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 60%;
+}
+
+.index .product-cat {
+    margin: 0 100px;
+}
+
+.index .avaliable-categories {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: center;
+    width: 50%;
+}
+
+.index .cat-recomendation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 300px;
+}
+
+.index .avaliable-categories .title {
+    text-align: center;
+    margin-bottom: 10px;
+}

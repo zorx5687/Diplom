@@ -1,0 +1,13 @@
+.index-product-cart {
+    width: 20%;
+    margin: 30px 20px;
+}
+
+.index-product-cart .index-product-cart-photo img {
+    width: 100%;
+}
+
+.product-title {
+    font-size: 24px;
+    font-weight: bold;
+}
